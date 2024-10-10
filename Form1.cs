@@ -9,11 +9,11 @@ namespace MultiplasJanelas
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            FormCriarProduto fcp = new FormCriarProduto(); 
+            FormCriarProduto fcp = new FormCriarProduto();
             var resulta = fcp.ShowDialog();
             if (resulta == DialogResult.OK)
             {
-                string textoProduto = $"{ fcp.nomeProduto}({fcp.nomeFabricante}) preço de compra [R$ {fcp.precoCompra}] preço de venda [R$ {fcp.precoVenda}]";
+                string textoProduto = $"{fcp.nomeProduto}({fcp.nomeFabricante}) preço de compra [R$ {fcp.precoCompra}] preço de venda [R$ {fcp.precoVenda}]";
                 listBox1.Items.Add(textoProduto);
             }
         }
@@ -21,6 +21,11 @@ namespace MultiplasJanelas
         private void buttonRemover_Click(object sender, EventArgs e)
         {
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

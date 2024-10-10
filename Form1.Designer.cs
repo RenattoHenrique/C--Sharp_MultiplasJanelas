@@ -36,9 +36,11 @@
             // buttonAdicionar
             // 
             buttonAdicionar.Cursor = Cursors.Hand;
+            buttonAdicionar.Image = Properties.Resources.plus2;
+            buttonAdicionar.ImageAlign = ContentAlignment.MiddleLeft;
             buttonAdicionar.Location = new Point(12, 12);
             buttonAdicionar.Name = "buttonAdicionar";
-            buttonAdicionar.Size = new Size(125, 27);
+            buttonAdicionar.Size = new Size(167, 46);
             buttonAdicionar.TabIndex = 0;
             buttonAdicionar.Text = "Adicionar";
             buttonAdicionar.UseVisualStyleBackColor = true;
@@ -48,9 +50,11 @@
             // 
             buttonRemover.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonRemover.Cursor = Cursors.Hand;
-            buttonRemover.Location = new Point(180, 12);
+            buttonRemover.Image = Properties.Resources.vcsconflicting_93497;
+            buttonRemover.ImageAlign = ContentAlignment.MiddleLeft;
+            buttonRemover.Location = new Point(223, 12);
             buttonRemover.Name = "buttonRemover";
-            buttonRemover.Size = new Size(125, 27);
+            buttonRemover.Size = new Size(167, 46);
             buttonRemover.TabIndex = 1;
             buttonRemover.Text = "Remover";
             buttonRemover.UseVisualStyleBackColor = true;
@@ -62,16 +66,16 @@
             listBox1.Cursor = Cursors.IBeam;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(12, 53);
+            listBox1.Location = new Point(12, 83);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(289, 409);
+            listBox1.Size = new Size(378, 364);
             listBox1.TabIndex = 2;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(313, 473);
+            ClientSize = new Size(402, 469);
             Controls.Add(listBox1);
             Controls.Add(buttonRemover);
             Controls.Add(buttonAdicionar);
