@@ -65,7 +65,7 @@
             // labelPrecodeVenda
             // 
             labelPrecodeVenda.AutoSize = true;
-            labelPrecodeVenda.Location = new Point(12, 103);
+            labelPrecodeVenda.Location = new Point(12, 109);
             labelPrecodeVenda.Name = "labelPrecodeVenda";
             labelPrecodeVenda.Size = new Size(88, 15);
             labelPrecodeVenda.TabIndex = 0;
@@ -92,7 +92,7 @@
             // labelNomedoProduto
             // 
             labelNomedoProduto.AutoSize = true;
-            labelNomedoProduto.Location = new Point(12, 19);
+            labelNomedoProduto.Location = new Point(12, 18);
             labelNomedoProduto.Name = "labelNomedoProduto";
             labelNomedoProduto.Size = new Size(103, 15);
             labelNomedoProduto.TabIndex = 0;
@@ -103,7 +103,7 @@
             inputPrecoCompra.DecimalPlaces = 2;
             inputPrecoCompra.ForeColor = Color.Green;
             inputPrecoCompra.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            inputPrecoCompra.Location = new Point(121, 70);
+            inputPrecoCompra.Location = new Point(121, 74);
             inputPrecoCompra.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             inputPrecoCompra.Name = "inputPrecoCompra";
             inputPrecoCompra.Size = new Size(120, 23);
@@ -115,7 +115,7 @@
             InputPrecoVenda.DecimalPlaces = 2;
             InputPrecoVenda.ForeColor = Color.Red;
             InputPrecoVenda.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            InputPrecoVenda.Location = new Point(121, 103);
+            InputPrecoVenda.Location = new Point(121, 105);
             InputPrecoVenda.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             InputPrecoVenda.Name = "InputPrecoVenda";
             InputPrecoVenda.Size = new Size(120, 23);
@@ -124,14 +124,14 @@
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(121, 19);
+            textBoxNome.Location = new Point(121, 14);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(120, 23);
             textBoxNome.TabIndex = 1;
             // 
             // textBoxFabricante
             // 
-            textBoxFabricante.Location = new Point(121, 44);
+            textBoxFabricante.Location = new Point(121, 43);
             textBoxFabricante.Name = "textBoxFabricante";
             textBoxFabricante.Size = new Size(120, 23);
             textBoxFabricante.TabIndex = 2;
