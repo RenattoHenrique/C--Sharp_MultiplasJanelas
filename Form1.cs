@@ -1,73 +1,43 @@
+
+using System.ComponentModel;
+
 namespace MultiplasJanelas
 {
     public partial class Form1 : Form
     {
+        public BindingList<Produto> produtos {  get; set; }
         public Form1()
         {
             InitializeComponent();
+            produtos = new BindingList<Produto>();
+            this.dataGridView1.DataSource = produtos;   
         }
 
         private void buttonAdicionar_Click(object sender, EventArgs e)
         {
-            FormCriarProduto fcp = new FormCriarProduto();
+            FormCriarProduto fcp = new FormCriarProduto(); 
             var resulta = fcp.ShowDialog();
             if (resulta == DialogResult.OK)
-            {
-                string textoProduto = $"{fcp.nomeProduto}({fcp.nomeFabricante}) preço de compra [R$ {fcp.precoCompra}] preço de venda [R$ {fcp.precoVenda}]";
-                listBox1.Items.Add(textoProduto);
+            {   
+                Produto produto = new Produto();
+                if (produtos.Count == 0) produto.Id = 1;
+                else produto.Id = produtos.Max(x => x.Id) + 1;
+                produto.Nome = fcp.nomeProduto;
+                produto.Fabricante = fcp.nomeFabricante;
+                produto.PrecoCompra = fcp.precoCompra;
+                produto.PrecoVenda = fcp.precoVenda;
+
+                produtos.Add(produto);
+
             }
         }
 
         private void buttonRemover_Click(object sender, EventArgs e)
         {
-            listBox1.Items.RemoveAt(listBox1.SelectedIndex);
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (this.WindowState == FormWindowState.Maximized)
+            if (dataGridView1.SelectedRows.Count > 0)
             {
-                this.WindowState = FormWindowState.Normal;
+                produtos.RemoveAt(dataGridView1.SelectedRows[0].Index);
             }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-        }
-
-        private void picture_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void pictureFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

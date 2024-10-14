@@ -44,7 +44,8 @@
             // 
             // buttonOk
             // 
-            buttonOk.Location = new Point(21, 148);
+            buttonOk.Cursor = Cursors.Hand;
+            buttonOk.Location = new Point(32, 170);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(75, 23);
             buttonOk.TabIndex = 5;
@@ -54,7 +55,8 @@
             // 
             // buttonCancelar
             // 
-            buttonCancelar.Location = new Point(166, 148);
+            buttonCancelar.Cursor = Cursors.Hand;
+            buttonCancelar.Location = new Point(186, 170);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(75, 23);
             buttonCancelar.TabIndex = 6;
@@ -65,7 +67,7 @@
             // labelPrecodeVenda
             // 
             labelPrecodeVenda.AutoSize = true;
-            labelPrecodeVenda.Location = new Point(12, 109);
+            labelPrecodeVenda.Location = new Point(32, 117);
             labelPrecodeVenda.Name = "labelPrecodeVenda";
             labelPrecodeVenda.Size = new Size(88, 15);
             labelPrecodeVenda.TabIndex = 0;
@@ -74,7 +76,7 @@
             // labelFabricante
             // 
             labelFabricante.AutoSize = true;
-            labelFabricante.Location = new Point(12, 47);
+            labelFabricante.Location = new Point(32, 58);
             labelFabricante.Name = "labelFabricante";
             labelFabricante.Size = new Size(62, 15);
             labelFabricante.TabIndex = 0;
@@ -83,7 +85,7 @@
             // labelPrecodeCompra
             // 
             labelPrecodeCompra.AutoSize = true;
-            labelPrecodeCompra.Location = new Point(12, 78);
+            labelPrecodeCompra.Location = new Point(32, 88);
             labelPrecodeCompra.Name = "labelPrecodeCompra";
             labelPrecodeCompra.Size = new Size(99, 15);
             labelPrecodeCompra.TabIndex = 0;
@@ -92,7 +94,7 @@
             // labelNomedoProduto
             // 
             labelNomedoProduto.AutoSize = true;
-            labelNomedoProduto.Location = new Point(12, 18);
+            labelNomedoProduto.Location = new Point(32, 29);
             labelNomedoProduto.Name = "labelNomedoProduto";
             labelNomedoProduto.Size = new Size(103, 15);
             labelNomedoProduto.TabIndex = 0;
@@ -100,38 +102,52 @@
             // 
             // inputPrecoCompra
             // 
+            inputPrecoCompra.BackColor = SystemColors.ActiveCaption;
+            inputPrecoCompra.Cursor = Cursors.Hand;
             inputPrecoCompra.DecimalPlaces = 2;
-            inputPrecoCompra.ForeColor = Color.Green;
+            inputPrecoCompra.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            inputPrecoCompra.ForeColor = Color.White;
             inputPrecoCompra.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            inputPrecoCompra.Location = new Point(121, 74);
-            inputPrecoCompra.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            inputPrecoCompra.Location = new Point(141, 84);
+            inputPrecoCompra.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             inputPrecoCompra.Name = "inputPrecoCompra";
-            inputPrecoCompra.Size = new Size(120, 23);
+            inputPrecoCompra.Size = new Size(120, 25);
             inputPrecoCompra.TabIndex = 3;
             inputPrecoCompra.TextAlign = HorizontalAlignment.Right;
             // 
             // InputPrecoVenda
             // 
+            InputPrecoVenda.BackColor = SystemColors.ActiveCaption;
+            InputPrecoVenda.Cursor = Cursors.Hand;
             InputPrecoVenda.DecimalPlaces = 2;
-            InputPrecoVenda.ForeColor = Color.Red;
+            InputPrecoVenda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            InputPrecoVenda.ForeColor = Color.FromArgb(192, 0, 0);
             InputPrecoVenda.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            InputPrecoVenda.Location = new Point(121, 105);
+            InputPrecoVenda.Location = new Point(141, 113);
             InputPrecoVenda.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             InputPrecoVenda.Name = "InputPrecoVenda";
-            InputPrecoVenda.Size = new Size(120, 23);
+            InputPrecoVenda.Size = new Size(120, 25);
             InputPrecoVenda.TabIndex = 4;
             InputPrecoVenda.TextAlign = HorizontalAlignment.Right;
             // 
             // textBoxNome
             // 
-            textBoxNome.Location = new Point(121, 14);
+            textBoxNome.BackColor = SystemColors.ActiveCaption;
+            textBoxNome.BorderStyle = BorderStyle.FixedSingle;
+            textBoxNome.Cursor = Cursors.IBeam;
+            textBoxNome.ForeColor = Color.White;
+            textBoxNome.Location = new Point(141, 25);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(120, 23);
             textBoxNome.TabIndex = 1;
             // 
             // textBoxFabricante
             // 
-            textBoxFabricante.Location = new Point(121, 43);
+            textBoxFabricante.BackColor = SystemColors.ActiveCaption;
+            textBoxFabricante.BorderStyle = BorderStyle.FixedSingle;
+            textBoxFabricante.Cursor = Cursors.IBeam;
+            textBoxFabricante.ForeColor = Color.White;
+            textBoxFabricante.Location = new Point(141, 54);
             textBoxFabricante.Name = "textBoxFabricante";
             textBoxFabricante.Size = new Size(120, 23);
             textBoxFabricante.TabIndex = 2;
@@ -141,8 +157,9 @@
             AcceptButton = buttonOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientActiveCaption;
             CancelButton = buttonCancelar;
-            ClientSize = new Size(252, 196);
+            ClientSize = new Size(284, 212);
             Controls.Add(textBoxFabricante);
             Controls.Add(textBoxNome);
             Controls.Add(InputPrecoVenda);
@@ -154,7 +171,9 @@
             Controls.Add(buttonCancelar);
             Controls.Add(buttonOk);
             Name = "FormCriarProduto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCriarProduto";
+            Load += FormCriarProduto_Load;
             ((System.ComponentModel.ISupportInitialize)inputPrecoCompra).EndInit();
             ((System.ComponentModel.ISupportInitialize)InputPrecoVenda).EndInit();
             ResumeLayout(false);
