@@ -73,6 +73,16 @@ namespace MultiplasJanelas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap istockphoto_1414729026_612x612 {
+            get {
+                object obj = ResourceManager.GetObject("istockphoto-1414729026-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap senai_logo_1__1_ {
             get {
                 object obj = ResourceManager.GetObject("senai-logo-1 (1)", resourceCulture);
