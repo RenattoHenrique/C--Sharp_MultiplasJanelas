@@ -7,7 +7,7 @@
         public decimal precoCompra { get { return this.inputPrecoCompra.Value; } }
         public decimal precoVenda { get { return this.InputPrecoVenda.Value; } }
 
-      
+
 
         public FormCriarProduto()
         {
@@ -27,6 +27,11 @@
         }
 
         private void FormCriarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNome_TextChanged(object sender, EventArgs e)
         {
 
         }

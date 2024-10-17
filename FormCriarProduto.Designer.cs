@@ -140,6 +140,7 @@
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(120, 23);
             textBoxNome.TabIndex = 1;
+            textBoxNome.TextChanged += textBoxNome_TextChanged;
             // 
             // textBoxFabricante
             // 
