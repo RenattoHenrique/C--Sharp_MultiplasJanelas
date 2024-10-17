@@ -290,6 +290,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormCriarFornecedor";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCriarFornecedor";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

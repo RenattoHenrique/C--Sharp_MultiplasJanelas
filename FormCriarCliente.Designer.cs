@@ -225,7 +225,7 @@
             buttonOk.TabIndex = 3;
             buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
-            buttonOk.Click += this.buttonOk_Click;
+            buttonOk.Click += buttonOk_Click;
             // 
             // buttonCancel
             // 
@@ -235,7 +235,7 @@
             buttonCancel.TabIndex = 3;
             buttonCancel.Text = "Cancelar";
             buttonCancel.UseVisualStyleBackColor = true;
-            buttonCancel.Click += this.buttonCancel_Click;
+            buttonCancel.Click += buttonCancel_Click;
             // 
             // FormCriarCliente
             // 
@@ -252,6 +252,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormCriarCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Novo Cliente";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

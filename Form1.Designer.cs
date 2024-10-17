@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             buttonAdicionarProd = new Button();
             buttonRemoverProd = new Button();
             dataGridView1 = new DataGridView();
@@ -41,7 +41,7 @@
             buttonViewCompras = new Button();
             panel1 = new Panel();
             button7 = new Button();
-            button8 = new Button();
+            buttonAdicionarFornecedores = new Button();
             buttonRemoverClient = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -94,28 +94,28 @@
             dataGridView1.BackgroundColor = SystemColors.ButtonFace;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Cursor = Cursors.Hand;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(202, 130);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(536, 489);
@@ -222,7 +222,7 @@
             // 
             panel1.BackColor = Color.FromArgb(64, 64, 64);
             panel1.Controls.Add(button7);
-            panel1.Controls.Add(button8);
+            panel1.Controls.Add(buttonAdicionarFornecedores);
             panel1.Controls.Add(buttonRemoverClient);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
@@ -257,19 +257,20 @@
             button7.Text = "Remover Fornecedor";
             button7.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // buttonAdicionarFornecedores
             // 
-            button8.BackColor = Color.FromArgb(64, 64, 64);
-            button8.Cursor = Cursors.Hand;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(0, 563);
-            button8.Name = "button8";
-            button8.Size = new Size(182, 25);
-            button8.TabIndex = 15;
-            button8.Text = "Adicionar Fornecedor";
-            button8.UseVisualStyleBackColor = false;
+            buttonAdicionarFornecedores.BackColor = Color.FromArgb(64, 64, 64);
+            buttonAdicionarFornecedores.Cursor = Cursors.Hand;
+            buttonAdicionarFornecedores.FlatAppearance.BorderSize = 0;
+            buttonAdicionarFornecedores.FlatStyle = FlatStyle.Flat;
+            buttonAdicionarFornecedores.ForeColor = Color.White;
+            buttonAdicionarFornecedores.Location = new Point(0, 563);
+            buttonAdicionarFornecedores.Name = "buttonAdicionarFornecedores";
+            buttonAdicionarFornecedores.Size = new Size(182, 25);
+            buttonAdicionarFornecedores.TabIndex = 15;
+            buttonAdicionarFornecedores.Text = "Adicionar Fornecedor";
+            buttonAdicionarFornecedores.UseVisualStyleBackColor = false;
+            buttonAdicionarFornecedores.Click += buttonAdicionarFornecedores_Click;
             // 
             // buttonRemoverClient
             // 
@@ -421,7 +422,7 @@
         private Button button3;
         private Button button4;
         private Button button7;
-        private Button button8;
+        private Button buttonAdicionarFornecedores;
         private Button buttonRemoverClient;
         private Button buttonAdicionarClient;
         private PictureBox minimize;

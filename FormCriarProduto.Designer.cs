@@ -102,11 +102,10 @@
             // 
             // inputPrecoCompra
             // 
-            inputPrecoCompra.BackColor = SystemColors.ActiveCaption;
             inputPrecoCompra.Cursor = Cursors.Hand;
             inputPrecoCompra.DecimalPlaces = 2;
             inputPrecoCompra.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            inputPrecoCompra.ForeColor = Color.White;
+            inputPrecoCompra.ForeColor = Color.Green;
             inputPrecoCompra.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             inputPrecoCompra.Location = new Point(141, 84);
             inputPrecoCompra.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
@@ -117,7 +116,6 @@
             // 
             // InputPrecoVenda
             // 
-            InputPrecoVenda.BackColor = SystemColors.ActiveCaption;
             InputPrecoVenda.Cursor = Cursors.Hand;
             InputPrecoVenda.DecimalPlaces = 2;
             InputPrecoVenda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
@@ -132,10 +130,8 @@
             // 
             // textBoxNome
             // 
-            textBoxNome.BackColor = SystemColors.ActiveCaption;
-            textBoxNome.BorderStyle = BorderStyle.FixedSingle;
             textBoxNome.Cursor = Cursors.IBeam;
-            textBoxNome.ForeColor = Color.White;
+            textBoxNome.ForeColor = Color.Black;
             textBoxNome.Location = new Point(141, 25);
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(120, 23);
@@ -144,10 +140,8 @@
             // 
             // textBoxFabricante
             // 
-            textBoxFabricante.BackColor = SystemColors.ActiveCaption;
-            textBoxFabricante.BorderStyle = BorderStyle.FixedSingle;
             textBoxFabricante.Cursor = Cursors.IBeam;
-            textBoxFabricante.ForeColor = Color.White;
+            textBoxFabricante.ForeColor = Color.Black;
             textBoxFabricante.Location = new Point(141, 54);
             textBoxFabricante.Name = "textBoxFabricante";
             textBoxFabricante.Size = new Size(120, 23);
@@ -158,7 +152,7 @@
             AcceptButton = buttonOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientActiveCaption;
+            BackColor = SystemColors.ButtonFace;
             CancelButton = buttonCancelar;
             ClientSize = new Size(284, 212);
             Controls.Add(textBoxFabricante);

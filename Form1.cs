@@ -90,5 +90,25 @@ namespace MultiplasJanelas
                 produtos.RemoveAt(dataGridView1.SelectedRows[0].Index);
             }
         }
+
+        private void buttonAdicionarFornecedores_Click(object sender, EventArgs e)
+        {
+            FormCriarFornecedor fcc = new FormCriarFornecedor();
+            var resultado = fcc.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                Fornecedor fornecedor = new Fornecedor();
+
+                if (fornecedores.Count == 0) fornecedor.Id = 1;
+                else fornecedor.Id = fornecedores.Max(x => x.Id) + 1;
+
+                fornecedor.nome = fcc.nomeFornecedor;
+                fornecedor.endereco = fcc.Endereco;
+                fornecedor.email = fcc.EmailFornecedor;
+                fornecedor.fone = fcc.TelefoneFornecedor;
+
+                fornecedores.Add(fornecedor);
+            }
+        }
     }
 }
