@@ -93,6 +93,16 @@ namespace MultiplasJanelas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap e70aca21915f4b9ce6b1bd29a7fb33bf {
+            get {
+                object obj = ResourceManager.GetObject("e70aca21915f4b9ce6b1bd29a7fb33bf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
@@ -146,6 +156,26 @@ namespace MultiplasJanelas.Properties {
         internal static System.Drawing.Bitmap produto {
             get {
                 object obj = ResourceManager.GetObject("produto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SENAI {
+            get {
+                object obj = ResourceManager.GetObject("SENAI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SENAI__1_ {
+            get {
+                object obj = ResourceManager.GetObject("SENAI (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
