@@ -1,28 +1,22 @@
+#nullable disable
+
 using System;
 using System.ComponentModel;
-using System.Runtime.InteropServices;
+using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace MultiplasJanelas
 {
     public partial class Form1 : Form
     {
-
         public BindingList<Produto> produtos { get; set; }
         public BindingList<Cliente> clientes { get; set; }
         public BindingList<Fornecedor> fornecedores { get; set; }
         public BindingList<Venda> vendas { get; set; }
         public BindingList<Compra> compras { get; set; }
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
+        private GradientBackground gradientBackground;
 
         public Form1()
         {
@@ -34,10 +28,21 @@ namespace MultiplasJanelas
             compras = new BindingList<Compra>();
             this.dataGridView1.Visible = false;
 
+            gradientBackground = new GradientBackground(
+                Color.FromArgb(199, 213, 237),
+                Color.FromArgb(241, 206, 215),
+                0.14f, 0.95f,
+                90F
+            );
 
+            this.Paint += new PaintEventHandler(Form1_Paint);
 
             this.FormBorderStyle = FormBorderStyle.None;
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 30, 30)); // Define a região com cantos arredondados
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            gradientBackground.ApplyGradient(e, this.ClientRectangle);
         }
 
         private void buttonAdicionarProd_Click(object sender, EventArgs e)
@@ -46,13 +51,14 @@ namespace MultiplasJanelas
             var resulta = fcp.ShowDialog();
             if (resulta == DialogResult.OK)
             {
-                Produto produto = new Produto();
-                if (produtos.Count == 0) produto.Id = 1;
-                else produto.Id = produtos.Max(x => x.Id) + 1;
-                produto.Nome = fcp.nomeProduto;
-                produto.Fabricante = fcp.nomeFabricante;
-                produto.PrecoCompra = fcp.precoCompra;
-                produto.PrecoVenda = fcp.precoVenda;
+                Produto produto = new Produto
+                {
+                    Id = produtos.Count == 0 ? 1 : produtos.Max(x => x.Id) + 1,
+                    Nome = fcp.nomeProduto,
+                    Fabricante = fcp.nomeFabricante,
+                    PrecoCompra = fcp.precoCompra,
+                    PrecoVenda = fcp.precoVenda
+                };
 
                 produtos.Add(produto);
             }
@@ -105,15 +111,14 @@ namespace MultiplasJanelas
             var resultado = fcc.ShowDialog();
             if (resultado == DialogResult.OK)
             {
-                Cliente cliente = new Cliente();
-
-                if (clientes.Count == 0) cliente.Id = 1;
-                else cliente.Id = clientes.Max(x => x.Id) + 1;
-
-                cliente.nome = fcc.Name;
-                cliente.endereco = fcc.Endereco;
-                cliente.email = fcc.EmailCliente;
-                cliente.fone = fcc.TelefoneCliente;
+                Cliente cliente = new Cliente
+                {
+                    Id = clientes.Count == 0 ? 1 : clientes.Max(x => x.Id) + 1,
+                    nome = fcc.Name,
+                    endereco = fcc.Endereco,
+                    email = fcc.EmailCliente,
+                    fone = fcc.TelefoneCliente
+                };
 
                 clientes.Add(cliente);
             }
@@ -123,7 +128,7 @@ namespace MultiplasJanelas
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                produtos.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                clientes.RemoveAt(dataGridView1.SelectedRows[0].Index);
             }
         }
 
@@ -133,15 +138,14 @@ namespace MultiplasJanelas
             var resultado = fcc.ShowDialog();
             if (resultado == DialogResult.OK)
             {
-                Fornecedor fornecedor = new Fornecedor();
-
-                if (fornecedores.Count == 0) fornecedor.Id = 1;
-                else fornecedor.Id = fornecedores.Max(x => x.Id) + 1;
-
-                fornecedor.nome = fcc.nomeFornecedor;
-                fornecedor.endereco = fcc.Endereco;
-                fornecedor.email = fcc.EmailFornecedor;
-                fornecedor.fone = fcc.TelefoneFornecedor;
+                Fornecedor fornecedor = new Fornecedor
+                {
+                    Id = fornecedores.Count == 0 ? 1 : fornecedores.Max(x => x.Id) + 1,
+                    nome = fcc.nomeFornecedor,
+                    endereco = fcc.Endereco,
+                    email = fcc.EmailFornecedor,
+                    fone = fcc.TelefoneFornecedor
+                };
 
                 fornecedores.Add(fornecedor);
             }
@@ -159,5 +163,62 @@ namespace MultiplasJanelas
                 m.Result = (IntPtr)HTCAPTION;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void maximize_Click_1(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
+            else
+                this.WindowState = FormWindowState.Normal;
+        }
+
+        private void buttonAdicionarCompra_Click(object sender, EventArgs e)
+        {
+            if (fornecedores.Count == 0)
+            {
+                MessageBox.Show("Você Precisa Cadastrar Fornecedores antes de efetuar uma compra.");
+                return;
+            }
+
+            if (produtos.Count == 0)
+            {
+                MessageBox.Show("Você Precisa Cadastrar Produtos antes de efetuar uma compra.");
+                return;
+            }
+
+            FormCriarCompra fcc = new FormCriarCompra(fornecedores, produtos);
+            var resultado = fcc.ShowDialog();
+            if (resultado == DialogResult.OK)
+            {
+                Compra compra = new Compra();
+                if (compras.Count == 0) compra.Id = 1;
+                else compra.Id = compras.Max(x => x.Id) + 1;
+
+                compra.IdProduto = fcc.IdProduto;
+                compra.IdFornecedor = fcc.IdFornecedor;
+                compra.Quantidade = (int)fcc.Quantidade;
+                compra.Desconto = fcc.Desconto;
+                compra.DataCompra = DateTime.Now;
+
+                compras.Add(compra);
+            }
+        }
+
+        private void buttonRemoverComp_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                compras.RemoveAt(dataGridView1.SelectedRows[0].Index);
+            }
+
+        }
+
+        private void buttonInicio_Click(object sender, EventArgs e)
+        {
+            this.dataGridView1.Visible = false;
+        }
     }
 }

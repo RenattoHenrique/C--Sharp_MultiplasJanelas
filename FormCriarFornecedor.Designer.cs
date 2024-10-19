@@ -58,12 +58,13 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(221, 389);
+            buttonCancel.Location = new Point(253, 389);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(75, 23);
             buttonCancel.TabIndex = 11;
             buttonCancel.Text = "Cancelar";
             buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.Click += buttonCancel_Click_1;
             // 
             // buttonOk
             // 
@@ -73,6 +74,7 @@
             buttonOk.TabIndex = 12;
             buttonOk.Text = "Ok";
             buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click_1;
             // 
             // textBoxEmailFornecedor
             // 
@@ -275,6 +277,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(220, 210, 226);
             ClientSize = new Size(342, 450);
             Controls.Add(textBoxNomeContFornecedor);
             Controls.Add(label11);

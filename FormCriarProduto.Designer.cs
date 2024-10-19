@@ -104,13 +104,12 @@
             // 
             inputPrecoCompra.Cursor = Cursors.Hand;
             inputPrecoCompra.DecimalPlaces = 2;
-            inputPrecoCompra.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             inputPrecoCompra.ForeColor = Color.Green;
             inputPrecoCompra.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             inputPrecoCompra.Location = new Point(141, 84);
             inputPrecoCompra.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             inputPrecoCompra.Name = "inputPrecoCompra";
-            inputPrecoCompra.Size = new Size(120, 25);
+            inputPrecoCompra.Size = new Size(120, 23);
             inputPrecoCompra.TabIndex = 3;
             inputPrecoCompra.TextAlign = HorizontalAlignment.Right;
             // 
@@ -118,13 +117,12 @@
             // 
             InputPrecoVenda.Cursor = Cursors.Hand;
             InputPrecoVenda.DecimalPlaces = 2;
-            InputPrecoVenda.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             InputPrecoVenda.ForeColor = Color.FromArgb(192, 0, 0);
             InputPrecoVenda.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             InputPrecoVenda.Location = new Point(141, 113);
             InputPrecoVenda.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             InputPrecoVenda.Name = "InputPrecoVenda";
-            InputPrecoVenda.Size = new Size(120, 25);
+            InputPrecoVenda.Size = new Size(120, 23);
             InputPrecoVenda.TabIndex = 4;
             InputPrecoVenda.TextAlign = HorizontalAlignment.Right;
             // 
@@ -152,7 +150,7 @@
             AcceptButton = buttonOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
+            BackColor = Color.FromArgb(220, 210, 226);
             CancelButton = buttonCancelar;
             ClientSize = new Size(284, 212);
             Controls.Add(textBoxFabricante);

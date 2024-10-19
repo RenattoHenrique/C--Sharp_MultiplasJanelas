@@ -55,7 +55,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(11, 38);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 0;
@@ -64,7 +65,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 41);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(11, 70);
             label2.Name = "label2";
             label2.Size = new Size(54, 15);
             label2.TabIndex = 0;
@@ -73,7 +75,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 75);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(11, 104);
             label3.Name = "label3";
             label3.Size = new Size(44, 15);
             label3.TabIndex = 0;
@@ -93,7 +96,8 @@
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
-            groupBox1.Location = new Point(12, 105);
+            groupBox1.ForeColor = Color.Black;
+            groupBox1.Location = new Point(11, 134);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(257, 212);
             groupBox1.TabIndex = 1;
@@ -198,28 +202,28 @@
             // 
             // textBoxNomeCliente
             // 
-            textBoxNomeCliente.Location = new Point(66, 5);
+            textBoxNomeCliente.Location = new Point(65, 34);
             textBoxNomeCliente.Name = "textBoxNomeCliente";
             textBoxNomeCliente.Size = new Size(197, 23);
             textBoxNomeCliente.TabIndex = 2;
             // 
             // textBoxTelefoneCliente
             // 
-            textBoxTelefoneCliente.Location = new Point(66, 37);
+            textBoxTelefoneCliente.Location = new Point(65, 66);
             textBoxTelefoneCliente.Name = "textBoxTelefoneCliente";
             textBoxTelefoneCliente.Size = new Size(197, 23);
             textBoxTelefoneCliente.TabIndex = 2;
             // 
             // textBoxEmailCliente
             // 
-            textBoxEmailCliente.Location = new Point(66, 71);
+            textBoxEmailCliente.Location = new Point(65, 100);
             textBoxEmailCliente.Name = "textBoxEmailCliente";
             textBoxEmailCliente.Size = new Size(197, 23);
             textBoxEmailCliente.TabIndex = 2;
             // 
             // buttonOk
             // 
-            buttonOk.Location = new Point(107, 337);
+            buttonOk.Location = new Point(106, 366);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(75, 23);
             buttonOk.TabIndex = 3;
@@ -229,7 +233,7 @@
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(188, 337);
+            buttonCancel.Location = new Point(187, 366);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(75, 23);
             buttonCancel.TabIndex = 3;
@@ -241,7 +245,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(283, 372);
+            BackColor = Color.FromArgb(220, 210, 226);
+            ClientSize = new Size(283, 408);
             Controls.Add(buttonCancel);
             Controls.Add(buttonOk);
             Controls.Add(textBoxEmailCliente);

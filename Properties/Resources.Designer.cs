@@ -103,9 +103,49 @@ namespace MultiplasJanelas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Faustino {
+            get {
+                object obj = ResourceManager.GetObject("Faustino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Faustino1 {
+            get {
+                object obj = ResourceManager.GetObject("Faustino1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fornecedor {
             get {
                 object obj = ResourceManager.GetObject("fornecedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fundo {
+            get {
+                object obj = ResourceManager.GetObject("Fundo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image {
+            get {
+                object obj = ResourceManager.GetObject("image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +186,26 @@ namespace MultiplasJanelas.Properties {
         internal static System.Drawing.Bitmap istockphoto_1414729026_612x612 {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1414729026-612x612", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap janela_maximizada {
+            get {
+                object obj = ResourceManager.GetObject("janela-maximizada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maximize_icon_512x512_670yazgv {
+            get {
+                object obj = ResourceManager.GetObject("maximize-icon-512x512-670yazgv", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

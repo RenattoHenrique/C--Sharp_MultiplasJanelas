@@ -8,7 +8,8 @@
 
         public string Endereco
         {
-            get {
+            get
+            {
                 string endereco = "";
                 endereco += $"({textBoxCompleCliente.Text}), ";
                 endereco += $"({textBoxNumCliente}), ";
@@ -31,6 +32,16 @@
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void fecharcliente_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void minimizeclient_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

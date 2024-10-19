@@ -35,17 +35,17 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            numericUpDownQuantidade = new NumericUpDown();
+            numericUpDownDesconto = new NumericUpDown();
+            textBoxPrecoUnitario = new TextBox();
+            textBoxValorTotal = new TextBox();
+            textBoxTotalComDesconto = new TextBox();
             comboBoxProduto = new ComboBox();
             comboBoxFornecedor = new ComboBox();
-            button1 = new Button();
-            button2 = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            buttonOk = new Button();
+            buttonCancelar = new Button();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDesconto).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -111,49 +111,51 @@
             label7.TabIndex = 0;
             label7.Text = "Total Com Desconto:";
             // 
-            // numericUpDown1
+            // numericUpDownQuantidade
             // 
-            numericUpDown1.Location = new Point(133, 66);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(171, 23);
-            numericUpDown1.TabIndex = 1;
+            numericUpDownQuantidade.Location = new Point(133, 66);
+            numericUpDownQuantidade.Name = "numericUpDownQuantidade";
+            numericUpDownQuantidade.Size = new Size(171, 23);
+            numericUpDownQuantidade.TabIndex = 1;
+            numericUpDownQuantidade.ValueChanged += numericUpDownQuantidade_ValueChanged;
             // 
-            // numericUpDown2
+            // numericUpDownDesconto
             // 
-            numericUpDown2.Location = new Point(133, 95);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(171, 23);
-            numericUpDown2.TabIndex = 1;
+            numericUpDownDesconto.Location = new Point(133, 95);
+            numericUpDownDesconto.Name = "numericUpDownDesconto";
+            numericUpDownDesconto.Size = new Size(171, 23);
+            numericUpDownDesconto.TabIndex = 1;
+            numericUpDownDesconto.ValueChanged += numericUpDownDesconto_ValueChanged;
             // 
-            // textBox1
+            // textBoxPrecoUnitario
             // 
-            textBox1.BackColor = SystemColors.ControlDarkDark;
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(133, 123);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 2;
+            textBoxPrecoUnitario.BackColor = SystemColors.ControlDarkDark;
+            textBoxPrecoUnitario.ForeColor = Color.White;
+            textBoxPrecoUnitario.Location = new Point(133, 123);
+            textBoxPrecoUnitario.Name = "textBoxPrecoUnitario";
+            textBoxPrecoUnitario.ReadOnly = true;
+            textBoxPrecoUnitario.Size = new Size(171, 23);
+            textBoxPrecoUnitario.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxValorTotal
             // 
-            textBox2.BackColor = SystemColors.ControlDarkDark;
-            textBox2.ForeColor = Color.White;
-            textBox2.Location = new Point(133, 153);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 2;
+            textBoxValorTotal.BackColor = SystemColors.ControlDarkDark;
+            textBoxValorTotal.ForeColor = Color.White;
+            textBoxValorTotal.Location = new Point(133, 153);
+            textBoxValorTotal.Name = "textBoxValorTotal";
+            textBoxValorTotal.ReadOnly = true;
+            textBoxValorTotal.Size = new Size(171, 23);
+            textBoxValorTotal.TabIndex = 2;
             // 
-            // textBox3
+            // textBoxTotalComDesconto
             // 
-            textBox3.BackColor = SystemColors.ControlDarkDark;
-            textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(133, 182);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(171, 23);
-            textBox3.TabIndex = 2;
+            textBoxTotalComDesconto.BackColor = SystemColors.ControlDarkDark;
+            textBoxTotalComDesconto.ForeColor = Color.White;
+            textBoxTotalComDesconto.Location = new Point(133, 182);
+            textBoxTotalComDesconto.Name = "textBoxTotalComDesconto";
+            textBoxTotalComDesconto.ReadOnly = true;
+            textBoxTotalComDesconto.Size = new Size(171, 23);
+            textBoxTotalComDesconto.TabIndex = 2;
             // 
             // comboBoxProduto
             // 
@@ -162,6 +164,7 @@
             comboBoxProduto.Name = "comboBoxProduto";
             comboBoxProduto.Size = new Size(171, 23);
             comboBoxProduto.TabIndex = 3;
+            comboBoxProduto.SelectedIndexChanged += comboBoxProduto_SelectedIndexChanged;
             // 
             // comboBoxFornecedor
             // 
@@ -171,38 +174,41 @@
             comboBoxFornecedor.Size = new Size(171, 23);
             comboBoxFornecedor.TabIndex = 3;
             // 
-            // button1
+            // buttonOk
             // 
-            button1.Location = new Point(148, 235);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Ok";
-            button1.UseVisualStyleBackColor = true;
+            buttonOk.Location = new Point(148, 235);
+            buttonOk.Name = "buttonOk";
+            buttonOk.Size = new Size(75, 23);
+            buttonOk.TabIndex = 4;
+            buttonOk.Text = "Ok";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
             // 
-            // button2
+            // buttonCancelar
             // 
-            button2.Location = new Point(229, 235);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 4;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            buttonCancelar.Location = new Point(229, 235);
+            buttonCancelar.Name = "buttonCancelar";
+            buttonCancelar.Size = new Size(75, 23);
+            buttonCancelar.TabIndex = 4;
+            buttonCancelar.Text = "Cancelar";
+            buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.Click += buttonCancelar_Click;
             // 
             // FormCriarCompra
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(220, 210, 226);
             ClientSize = new Size(328, 286);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(buttonCancelar);
+            Controls.Add(buttonOk);
             Controls.Add(comboBoxFornecedor);
             Controls.Add(comboBoxProduto);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(numericUpDown2);
-            Controls.Add(numericUpDown1);
+            Controls.Add(textBoxTotalComDesconto);
+            Controls.Add(textBoxValorTotal);
+            Controls.Add(textBoxPrecoUnitario);
+            Controls.Add(numericUpDownDesconto);
+            Controls.Add(numericUpDownQuantidade);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -211,9 +217,10 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "FormCriarCompra";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCriarCompra";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownQuantidade).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownDesconto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,14 +234,14 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private NumericUpDown numericUpDownQuantidade;
+        private NumericUpDown numericUpDownDesconto;
+        private TextBox textBoxPrecoUnitario;
+        private TextBox textBoxValorTotal;
+        private TextBox textBoxTotalComDesconto;
         private ComboBox comboBoxProduto;
         private ComboBox comboBoxFornecedor;
-        private Button button1;
-        private Button button2;
+        private Button buttonOk;
+        private Button buttonCancelar;
     }
 }

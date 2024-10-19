@@ -27,14 +27,15 @@
             InitializeComponent();
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-        private void buttonCancel_Click(object sender, EventArgs e)
+        private void buttonCancel_Click_1(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void buttonOk_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
     }
