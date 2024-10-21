@@ -11,9 +11,23 @@ namespace MultiplasJanelas
     {
 
         [DisplayName("Id")] public int Id { get; set; }    
-        [DisplayName("Nome do Cliente")] public string nome { get; set; }
-        [DisplayName("Número de Telefone")] public string fone { get; set; }
-        [DisplayName("Endereço de E-mail")] public string email { get; set; }
-        [DisplayName("Endereço Físico")] public string endereco { get; set; }
+        [DisplayName("Nome do Cliente")] public string Nome { get; set; }
+        [DisplayName("Número de Telefone")] public string Fone { get; set; }
+        [DisplayName("Endereço de E-mail")] public string Email { get; set; }
+        [DisplayName("Endereço Pessoal")] public string Endereco { get; set; }
+
+        public void loadData(string dataString)
+        {
+            string[] data = dataString.Split(';');
+            Id = int.Parse(data[0]);
+            Nome = data[1];
+            Fone = data[2];
+            Email = data[3];
+            Endereco = data[4];
+        }
+        public override string ToString()
+        {
+            return $"{Id};{Nome};{Fone};{Email};{Endereco}";
+        }
     }
 }

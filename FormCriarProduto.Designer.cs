@@ -44,29 +44,39 @@
             // 
             // buttonOk
             // 
+            buttonOk.BackColor = Color.FromArgb(71, 84, 114);
             buttonOk.Cursor = Cursors.Hand;
-            buttonOk.Location = new Point(32, 170);
+            buttonOk.FlatAppearance.BorderSize = 0;
+            buttonOk.FlatStyle = FlatStyle.Flat;
+            buttonOk.ForeColor = Color.White;
+            buttonOk.Location = new Point(45, 170);
             buttonOk.Name = "buttonOk";
             buttonOk.Size = new Size(75, 23);
             buttonOk.TabIndex = 5;
             buttonOk.Text = "Ok";
-            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.UseVisualStyleBackColor = false;
             buttonOk.Click += buttonOk_Click;
             // 
             // buttonCancelar
             // 
+            buttonCancelar.BackColor = Color.FromArgb(71, 84, 114);
             buttonCancelar.Cursor = Cursors.Hand;
+            buttonCancelar.FlatAppearance.BorderSize = 0;
+            buttonCancelar.FlatStyle = FlatStyle.Flat;
+            buttonCancelar.ForeColor = Color.White;
             buttonCancelar.Location = new Point(186, 170);
             buttonCancelar.Name = "buttonCancelar";
             buttonCancelar.Size = new Size(75, 23);
             buttonCancelar.TabIndex = 6;
             buttonCancelar.Text = "Cancelar";
-            buttonCancelar.UseVisualStyleBackColor = true;
+            buttonCancelar.UseVisualStyleBackColor = false;
             buttonCancelar.Click += buttonCancelar_Click;
             // 
             // labelPrecodeVenda
             // 
             labelPrecodeVenda.AutoSize = true;
+            labelPrecodeVenda.BackColor = Color.Transparent;
+            labelPrecodeVenda.ForeColor = Color.Black;
             labelPrecodeVenda.Location = new Point(32, 117);
             labelPrecodeVenda.Name = "labelPrecodeVenda";
             labelPrecodeVenda.Size = new Size(88, 15);
@@ -76,6 +86,8 @@
             // labelFabricante
             // 
             labelFabricante.AutoSize = true;
+            labelFabricante.BackColor = Color.Transparent;
+            labelFabricante.ForeColor = Color.Black;
             labelFabricante.Location = new Point(32, 58);
             labelFabricante.Name = "labelFabricante";
             labelFabricante.Size = new Size(62, 15);
@@ -85,6 +97,8 @@
             // labelPrecodeCompra
             // 
             labelPrecodeCompra.AutoSize = true;
+            labelPrecodeCompra.BackColor = Color.Transparent;
+            labelPrecodeCompra.ForeColor = Color.Black;
             labelPrecodeCompra.Location = new Point(32, 88);
             labelPrecodeCompra.Name = "labelPrecodeCompra";
             labelPrecodeCompra.Size = new Size(99, 15);
@@ -94,6 +108,8 @@
             // labelNomedoProduto
             // 
             labelNomedoProduto.AutoSize = true;
+            labelNomedoProduto.BackColor = Color.Transparent;
+            labelNomedoProduto.ForeColor = Color.Black;
             labelNomedoProduto.Location = new Point(32, 29);
             labelNomedoProduto.Name = "labelNomedoProduto";
             labelNomedoProduto.Size = new Size(103, 15);
@@ -134,7 +150,6 @@
             textBoxNome.Name = "textBoxNome";
             textBoxNome.Size = new Size(120, 23);
             textBoxNome.TabIndex = 1;
-            textBoxNome.TextChanged += textBoxNome_TextChanged;
             // 
             // textBoxFabricante
             // 
@@ -150,7 +165,6 @@
             AcceptButton = buttonOk;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(220, 210, 226);
             CancelButton = buttonCancelar;
             ClientSize = new Size(284, 212);
             Controls.Add(textBoxFabricante);
@@ -165,8 +179,7 @@
             Controls.Add(buttonOk);
             Name = "FormCriarProduto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormCriarProduto";
-            Load += FormCriarProduto_Load;
+            Text = "Criar Produto";
             ((System.ComponentModel.ISupportInitialize)inputPrecoCompra).EndInit();
             ((System.ComponentModel.ISupportInitialize)InputPrecoVenda).EndInit();
             ResumeLayout(false);

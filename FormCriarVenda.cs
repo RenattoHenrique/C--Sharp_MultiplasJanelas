@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MultiplasJanelas
 {
-    public partial class FormCriarCompra : Form
+    public partial class FormCriarVenda : Form
     {
         private GradientBackground gradientBackground;
-        private BindingList<Fornecedor> Fornecedores { get; set; }
-        private Fornecedor Fornecedor { get { return Fornecedores.FirstOrDefault(f => f.Id == (int)comboBoxFornecedor.SelectedValue); } }
-        public int IdFornecedor { get { return (int)comboBoxFornecedor.SelectedValue; } }
+
+        BindingList<Cliente> Clientes { get; set; }
+        Cliente Cliente { get; set; }
+        public int IdCliente { get { return (int)comboBoxCliente.SelectedValue; } }
 
         private BindingList<Produto> Produtos { get; set; }
         private Produto Produto { get { return Produtos.FirstOrDefault(p => p.Id == (int)comboBoxProduto.SelectedValue); } }
@@ -24,28 +21,30 @@ namespace MultiplasJanelas
 
         public decimal Quantidade { get { return numericUpDownQuantidade.Value; } }
         public decimal Desconto { get { return numericUpDownDesconto.Value; } }
-        public decimal PrecoUnitario { get { return Produto.PrecoCompra; } }
-        public decimal ValorTotal { get { return PrecoUnitario * Quantidade; } }
+
+        private decimal PrecoUnitario { get { return Produto.PrecoCompra; } }
+        private decimal ValorTotal { get { return PrecoUnitario * Quantidade; } }
         private decimal ValorComDesconto { get { return ValorTotal * (1 - (Desconto / 100)); } }
 
-        public FormCriarCompra(BindingList<Fornecedor> fornecedores, BindingList<Produto> produtos)
+        public FormCriarVenda(BindingList<Cliente> clientes, BindingList<Produto> produtos)
         {
             InitializeComponent();
 
+            // Inicializa o gradiente
             gradientBackground = new GradientBackground(
                 Color.FromArgb(199, 213, 237),
                 Color.FromArgb(241, 206, 215),
-                0.14f, 0.95f,
-                90F
+                0.14f, 0.95f,                   
+                90F                             
             );
 
-            this.Paint += new PaintEventHandler(FormCriarCompra_Paint);
+            this.Paint += new PaintEventHandler(FormCriarVenda_Paint);
 
-            Fornecedores = fornecedores;
-            comboBoxFornecedor.ValueMember = "Id";
-            comboBoxFornecedor.DisplayMember = "NomeEmpresa";
-            comboBoxFornecedor.DataSource = Fornecedores;
-            comboBoxFornecedor.SelectedIndex = 0;
+            Clientes = clientes;
+            comboBoxCliente.ValueMember = "Id";
+            comboBoxCliente.DisplayMember = "Nome";
+            comboBoxCliente.DataSource = Clientes;
+            comboBoxCliente.SelectedIndex = 0;
 
             Produtos = produtos;
             comboBoxProduto.ValueMember = "Id";
@@ -54,7 +53,7 @@ namespace MultiplasJanelas
             comboBoxProduto.SelectedIndex = 0;
         }
 
-        private void FormCriarCompra_Paint(object sender, PaintEventArgs e)
+        private void FormCriarVenda_Paint(object sender, PaintEventArgs e)
         {
             gradientBackground.ApplyGradient(e, this.ClientRectangle);
         }

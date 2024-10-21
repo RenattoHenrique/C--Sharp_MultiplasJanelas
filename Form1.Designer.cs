@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             buttonAdicionarProd = new Button();
             buttonRemoverProd = new Button();
             dataGridView1 = new DataGridView();
@@ -40,14 +41,14 @@
             buttonViewCompras = new Button();
             panel1 = new Panel();
             buttonInicio = new Button();
-            button7 = new Button();
-            buttonAdicionarFornecedores = new Button();
+            buttonRemoverForn = new Button();
+            buttonAdicionarFornecedor = new Button();
             buttonRemoverClient = new Button();
             buttonRemoverComp = new Button();
             buttonAdicionarCompra = new Button();
-            buttonAdicionarClient = new Button();
-            button1 = new Button();
-            button2 = new Button();
+            buttonAdicionarCliente = new Button();
+            buttonRemoverVendas = new Button();
+            buttonAdicionarVendas = new Button();
             fechar = new PictureBox();
             minimize = new PictureBox();
             maximize = new PictureBox();
@@ -96,32 +97,39 @@
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BackgroundColor = Color.FromArgb(220, 210, 226);
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(71, 84, 114);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(71, 84, 114);
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(89, 105, 143);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Cursor = Cursors.Hand;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(89, 105, 143);
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(191, 124);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.RowHeadersVisible = false;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Control;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(89, 105, 143);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             dataGridView1.Size = new Size(536, 470);
             dataGridView1.TabIndex = 2;
             // 
@@ -224,14 +232,14 @@
             // 
             panel1.BackColor = Color.FromArgb(71, 84, 114);
             panel1.Controls.Add(buttonInicio);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(buttonAdicionarFornecedores);
+            panel1.Controls.Add(buttonRemoverForn);
+            panel1.Controls.Add(buttonAdicionarFornecedor);
             panel1.Controls.Add(buttonRemoverClient);
             panel1.Controls.Add(buttonRemoverComp);
             panel1.Controls.Add(buttonAdicionarCompra);
-            panel1.Controls.Add(buttonAdicionarClient);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(buttonAdicionarCliente);
+            panel1.Controls.Add(buttonRemoverVendas);
+            panel1.Controls.Add(buttonAdicionarVendas);
             panel1.Controls.Add(buttonViewFornecedores);
             panel1.Controls.Add(buttonViewCompras);
             panel1.Controls.Add(buttonRemoverProd);
@@ -258,36 +266,37 @@
             buttonInicio.UseVisualStyleBackColor = true;
             buttonInicio.Click += buttonInicio_Click;
             // 
-            // button7
+            // buttonRemoverForn
             // 
-            button7.BackColor = Color.Transparent;
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(0, 594);
-            button7.Name = "button7";
-            button7.Size = new Size(182, 25);
-            button7.TabIndex = 16;
-            button7.Text = "Remover Fornecedor";
-            button7.UseVisualStyleBackColor = false;
+            buttonRemoverForn.BackColor = Color.Transparent;
+            buttonRemoverForn.Cursor = Cursors.Hand;
+            buttonRemoverForn.FlatAppearance.BorderSize = 0;
+            buttonRemoverForn.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
+            buttonRemoverForn.FlatStyle = FlatStyle.Flat;
+            buttonRemoverForn.ForeColor = Color.White;
+            buttonRemoverForn.Location = new Point(0, 594);
+            buttonRemoverForn.Name = "buttonRemoverForn";
+            buttonRemoverForn.Size = new Size(182, 25);
+            buttonRemoverForn.TabIndex = 16;
+            buttonRemoverForn.Text = "Remover Fornecedor";
+            buttonRemoverForn.UseVisualStyleBackColor = false;
+            buttonRemoverForn.Click += buttonRemoverForn_Click;
             // 
-            // buttonAdicionarFornecedores
+            // buttonAdicionarFornecedor
             // 
-            buttonAdicionarFornecedores.BackColor = Color.Transparent;
-            buttonAdicionarFornecedores.Cursor = Cursors.Hand;
-            buttonAdicionarFornecedores.FlatAppearance.BorderSize = 0;
-            buttonAdicionarFornecedores.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
-            buttonAdicionarFornecedores.FlatStyle = FlatStyle.Flat;
-            buttonAdicionarFornecedores.ForeColor = Color.White;
-            buttonAdicionarFornecedores.Location = new Point(0, 563);
-            buttonAdicionarFornecedores.Name = "buttonAdicionarFornecedores";
-            buttonAdicionarFornecedores.Size = new Size(182, 25);
-            buttonAdicionarFornecedores.TabIndex = 15;
-            buttonAdicionarFornecedores.Text = "Adicionar Fornecedor";
-            buttonAdicionarFornecedores.UseVisualStyleBackColor = false;
-            buttonAdicionarFornecedores.Click += buttonAdicionarFornecedores_Click;
+            buttonAdicionarFornecedor.BackColor = Color.Transparent;
+            buttonAdicionarFornecedor.Cursor = Cursors.Hand;
+            buttonAdicionarFornecedor.FlatAppearance.BorderSize = 0;
+            buttonAdicionarFornecedor.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
+            buttonAdicionarFornecedor.FlatStyle = FlatStyle.Flat;
+            buttonAdicionarFornecedor.ForeColor = Color.White;
+            buttonAdicionarFornecedor.Location = new Point(0, 563);
+            buttonAdicionarFornecedor.Name = "buttonAdicionarFornecedor";
+            buttonAdicionarFornecedor.Size = new Size(182, 25);
+            buttonAdicionarFornecedor.TabIndex = 15;
+            buttonAdicionarFornecedor.Text = "Adicionar Fornecedor";
+            buttonAdicionarFornecedor.UseVisualStyleBackColor = false;
+            buttonAdicionarFornecedor.Click += buttonAdicionarFornecedor_Click_1;
             // 
             // buttonRemoverClient
             // 
@@ -337,51 +346,53 @@
             buttonAdicionarCompra.UseVisualStyleBackColor = false;
             buttonAdicionarCompra.Click += buttonAdicionarCompra_Click;
             // 
-            // buttonAdicionarClient
+            // buttonAdicionarCliente
             // 
-            buttonAdicionarClient.BackColor = Color.Transparent;
-            buttonAdicionarClient.Cursor = Cursors.Hand;
-            buttonAdicionarClient.FlatAppearance.BorderSize = 0;
-            buttonAdicionarClient.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
-            buttonAdicionarClient.FlatStyle = FlatStyle.Flat;
-            buttonAdicionarClient.ForeColor = Color.White;
-            buttonAdicionarClient.Location = new Point(0, 463);
-            buttonAdicionarClient.Name = "buttonAdicionarClient";
-            buttonAdicionarClient.Size = new Size(182, 25);
-            buttonAdicionarClient.TabIndex = 13;
-            buttonAdicionarClient.Text = "Adicionar Cliente";
-            buttonAdicionarClient.UseVisualStyleBackColor = false;
-            buttonAdicionarClient.Click += buttonAdicionarClient_Click;
+            buttonAdicionarCliente.BackColor = Color.Transparent;
+            buttonAdicionarCliente.Cursor = Cursors.Hand;
+            buttonAdicionarCliente.FlatAppearance.BorderSize = 0;
+            buttonAdicionarCliente.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
+            buttonAdicionarCliente.FlatStyle = FlatStyle.Flat;
+            buttonAdicionarCliente.ForeColor = Color.White;
+            buttonAdicionarCliente.Location = new Point(0, 463);
+            buttonAdicionarCliente.Name = "buttonAdicionarCliente";
+            buttonAdicionarCliente.Size = new Size(182, 25);
+            buttonAdicionarCliente.TabIndex = 13;
+            buttonAdicionarCliente.Text = "Adicionar Cliente";
+            buttonAdicionarCliente.UseVisualStyleBackColor = false;
+            buttonAdicionarCliente.Click += buttonAdicionarCliente_Click_1;
             // 
-            // button1
+            // buttonRemoverVendas
             // 
-            button1.BackColor = Color.Transparent;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(0, 296);
-            button1.Name = "button1";
-            button1.Size = new Size(182, 25);
-            button1.TabIndex = 10;
-            button1.Text = "Remover Vendas";
-            button1.UseVisualStyleBackColor = false;
+            buttonRemoverVendas.BackColor = Color.Transparent;
+            buttonRemoverVendas.Cursor = Cursors.Hand;
+            buttonRemoverVendas.FlatAppearance.BorderSize = 0;
+            buttonRemoverVendas.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
+            buttonRemoverVendas.FlatStyle = FlatStyle.Flat;
+            buttonRemoverVendas.ForeColor = Color.White;
+            buttonRemoverVendas.Location = new Point(0, 296);
+            buttonRemoverVendas.Name = "buttonRemoverVendas";
+            buttonRemoverVendas.Size = new Size(182, 25);
+            buttonRemoverVendas.TabIndex = 10;
+            buttonRemoverVendas.Text = "Remover Vendas";
+            buttonRemoverVendas.UseVisualStyleBackColor = false;
+            buttonRemoverVendas.Click += buttonRemoverVendas_Click;
             // 
-            // button2
+            // buttonAdicionarVendas
             // 
-            button2.BackColor = Color.Transparent;
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 265);
-            button2.Name = "button2";
-            button2.Size = new Size(182, 25);
-            button2.TabIndex = 9;
-            button2.Text = "Adicionar Vendas";
-            button2.UseVisualStyleBackColor = false;
+            buttonAdicionarVendas.BackColor = Color.Transparent;
+            buttonAdicionarVendas.Cursor = Cursors.Hand;
+            buttonAdicionarVendas.FlatAppearance.BorderSize = 0;
+            buttonAdicionarVendas.FlatAppearance.MouseOverBackColor = Color.FromArgb(89, 105, 143);
+            buttonAdicionarVendas.FlatStyle = FlatStyle.Flat;
+            buttonAdicionarVendas.ForeColor = Color.White;
+            buttonAdicionarVendas.Location = new Point(0, 265);
+            buttonAdicionarVendas.Name = "buttonAdicionarVendas";
+            buttonAdicionarVendas.Size = new Size(182, 25);
+            buttonAdicionarVendas.TabIndex = 9;
+            buttonAdicionarVendas.Text = "Adicionar Vendas";
+            buttonAdicionarVendas.UseVisualStyleBackColor = false;
+            buttonAdicionarVendas.Click += buttonAdicionarVendas_Click;
             // 
             // fechar
             // 
@@ -453,7 +464,6 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fechar).EndInit();
@@ -475,14 +485,14 @@
         private Button buttonViewCompras;
         private Panel panel1;
         private PictureBox fechar;
-        private Button button1;
-        private Button button2;
+        private Button buttonRemoverVendas;
+        private Button buttonAdicionarVendas;
         private Button buttonRemoverComp;
         private Button buttonAdicionarCompra;
-        private Button button7;
-        private Button buttonAdicionarFornecedores;
+        private Button buttonRemoverForn;
+        private Button buttonAdicionarFornecedor;
         private Button buttonRemoverClient;
-        private Button buttonAdicionarClient;
+        private Button buttonAdicionarCliente;
         private PictureBox minimize;
         private PictureBox maximize;
         private Button buttonInicio;
